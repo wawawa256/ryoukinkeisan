@@ -99,13 +99,13 @@ public class changescene : MonoBehaviour
       //端末代金計算ゾーン
       //ポイントのあまりを計算する
       if (sumatoku == 1){
-        if ((pos - zan - waribiki) < 0){
-          amari = (-1)*(pos - zan - waribiki) + 47;
+        amari = pos - zan - atamakin*11000 -waribiki-47;
+        if (amari > 47){
+          amari =0;
         }
     }else{
-        if (n == 1) {
-          if ((pos - waribiki) < 0 ) amari = (-1)*(pos - waribiki);
-        }
+          if ((pos - waribiki- atamakin*11000) < 0 ) amari = (pos - waribiki- atamakin*11000);
+
       }
 
 
