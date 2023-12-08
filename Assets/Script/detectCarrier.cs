@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 
 public class detectCarrier : MonoBehaviour {
-    public static int kyaria;
+    public static int kyaria=0;
     public Dropdown dropdown;    //操作するオブジェクトを設定する
 
 
     public void OnValueChanged() {
         kyaria = dropdown.value;
         Debug.Log("キャリアは" + kyaria);
-        
+
     }
 }

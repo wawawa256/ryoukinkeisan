@@ -44,7 +44,6 @@ public class Plantext : MonoBehaviour {
         dropdown.ClearOptions();    //現在の要素をクリアする
         List<string> list = new List<string>();
         list.Add("使い放題MAX");
-        list.Add("スマホミニ");
         list.Add("翌ミニミニ");
         list.Add("翌トクトク");
         list.Add("翌コミコミ");
