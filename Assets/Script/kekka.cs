@@ -9,6 +9,7 @@ using UnityEngine.UI;  // 追加しましょう
 public class kekka : MonoBehaviour {
     public GameObject score_object = null; // Textオブジェクト
     public static int bun;
+    public static int bun1;
   DateTime dt = DateTime.Now;
       // 初期化
       void Start () {
@@ -21,11 +22,12 @@ public class kekka : MonoBehaviour {
         }else{
             bun = 24;
         }
+        bun1=bun+1;
         Text score_text = score_object.GetComponent<Text> ();
-        score_text.text = dt.Month + "月" +
+        score_text.text = "初月" +
                   "\n\n" +"2ヶ月" +
                   "\n\n" + "3-" + bun +"ヶ月" +
-                  "\n\n" +  bun +"-48ヶ月"+
-                  "\n\n" +"48-ヶ月";
+                  "\n\n" +  bun1 +"-48ヶ月"+
+                  "\n\n" +"49-ヶ月";
       }
 }

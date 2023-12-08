@@ -24,6 +24,7 @@ public class changescene : MonoBehaviour
     public static int tuusin ; //一月あたりの通信費
     public static int tuutei; //通話オプションによる追加金額
     public static int uqwari; //uqの料金割引額;
+    public static int amari; //割引多めでポイント溢れたとき(もうそんなことはないんでしょうけどね...)
     public static int zimute ;//事務手数料
     //以下,各料金プランの基本料金
     public static int eximo;
@@ -96,6 +97,17 @@ public class changescene : MonoBehaviour
       tuusin = 0;
       zimute = 3850;
       //端末代金計算ゾーン
+      //ポイントのあまりを計算する
+      if (sumatoku == 1){
+        if ((pos - zan - waribiki) < 0){
+          amari = (-1)*(pos - zan - waribiki) + 47;
+        }
+    }else{
+        if (n == 1) {
+          if ((pos - waribiki) < 0 ) amari = (-1)*(pos - waribiki);
+        }
+      }
+
 
       //初月は端末代はかからない
       tanmatu = 0;
