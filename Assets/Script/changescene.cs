@@ -34,6 +34,7 @@ public class changescene : MonoBehaviour
     public static int irumo3;
     public static int irumo6;
     public static int irumo9;
+    public static int ahamo;
     public static int aumax;
     public static int mini;
     public static int toku;
@@ -86,6 +87,7 @@ public class changescene : MonoBehaviour
       irumo3 = 2167;
       irumo6 = 2827;
       irumo9 = 3377;
+      ahamo = 2970;
       aumax = 7238;
       mini = 2365;
       toku = 3465;
@@ -257,18 +259,17 @@ public class changescene : MonoBehaviour
             irumo=irumo9;
             break;
           }
+        //アハモの場合,カケホが1100円,5分は無料なので,調整する.
+        if (tuutei == 880 ) tuutei = 0;
+        if (tuutei == 1980)  tuutei = 1100;
         //一ヶ月目はeximoの1gbまでの料金の日割り+通話オプション
         tuusin = (4565*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month)+tuutei;
         ryoukin[0,1] = tuusin;
-        //二ヶ月目以降は基本料金-光割ー支払い割+通話オプション代金,ただしirumo05の場合は割引なし
-        if (irumo != 550){
-          tuusin = irumo - (BB*1100) - (pay*187)+tuutei;
-          ryoukin[1,1] = tuusin;
-        }else{
-          tuusin = irumo+tuutei;
-          ryoukin[1,1] = tuusin;
-          ryoukin[2,1] = tuusin;
-        }
+        //二ヶ月目以降はahamoなので割引なし
+        tuusin = ahamo+tuutei;
+        ryoukin[1,1] = tuusin;
+        ryoukin[2,1] = tuusin;
+
         break;
         }
         break;
