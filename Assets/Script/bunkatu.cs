@@ -13,6 +13,7 @@ public class bunkatu : MonoBehaviour {
   void Start () {
     //Componentを扱えるようにする
       inputField = inputField.GetComponent<InputField> ();
+      n = 24;
     }
 
     public void InputText(){

@@ -54,6 +54,8 @@ public class changescene : MonoBehaviour
       Debug.Log("初月は" + ryoukin[0,1]);
       Debug.Log("翌月は" + ryoukin[1,1]);
       Debug.Log("翌月以降は" + ryoukin[2,1]);
+      Debug.Log("実質" + ryoukin[1,0]);
+      Debug.Log("返却" + ryoukin[2,0]);
     }
 
 
@@ -124,7 +126,8 @@ public class changescene : MonoBehaviour
               if (n != 0){ //0で割るとバグるので
               tanmatu=(pos - (atamakin*11000)-waribiki)/n;
               ryoukin[1,0] = tanmatu;
-              ryoukin[2,0] = tanmatu;
+              //通常割賦はn月目で分割終わりなので
+              ryoukin[2,0] = 0;
             }
             }
 
@@ -184,6 +187,7 @@ public class changescene : MonoBehaviour
             if (irumo != 550){
               tuusin = irumo - (BB*1100) - (pay*187)+tuutei;
               ryoukin[1,1] = tuusin;
+              ryoukin[2,1] = tuusin;
             }else{
               tuusin = irumo+tuutei;
               ryoukin[1,1] = tuusin;
@@ -215,6 +219,7 @@ public class changescene : MonoBehaviour
           if (irumo != 550){
             tuusin = irumo - (BB*1100) - (pay*187)+tuutei;
             ryoukin[1,1] = tuusin;
+            ryoukin[2,1] = tuusin;
           }else{
             tuusin = irumo+tuutei;
             ryoukin[1,1] = tuusin;
@@ -348,6 +353,7 @@ public class changescene : MonoBehaviour
           tuusin = (aumax/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + komi +tuutei;
           ryoukin[1,1] = tuusin;
           //三ヶ月目以降は,UQ満額+通話オプション
+          //コミコミプランは割引なし！
           tuusin = komi+tuutei;
           ryoukin[2,1] = tuusin;
           break;
