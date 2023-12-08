@@ -24,6 +24,7 @@ public class changescene : MonoBehaviour
     public static int tuusin ; //一月あたりの通信費
     public static int tuutei; //通話オプションによる追加金額
     public static int uqwari; //uqの料金割引額;
+    public static int uqhiwari; //翌日uqが遅れるとどのくらい痛いのか?
     public static int amari; //割引多めでポイント溢れたとき(もうそんなことはないんでしょうけどね...)
     public static int zimute ;//事務手数料
     //以下,各料金プランの基本料金
@@ -303,7 +304,7 @@ public class changescene : MonoBehaviour
           tuusin = (aumax*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month)+tuutei;
           ryoukin[0,1] = tuusin;
           //二ヶ月目以降は基本料金-家族割-光割ー支払い割+通話オプション代金
-          tuusin = eximo - (family*550) - (BB*1100) - (pay*187)+tuutei;
+          tuusin = aumax - (family*550) - (BB*1100) - (pay*187)+tuutei;
           ryoukin[1,1] = tuusin;
           ryoukin[2,1] = tuusin;
           break;
@@ -324,8 +325,9 @@ public class changescene : MonoBehaviour
           tuusin = (aumax*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month)+tuutei;
           ryoukin[0,1] = tuusin;
           //二ヶ月目は,AU使い放題一日+UQ満額-割引ー支払い割+通話オプション代金で計算.実際初日にやったらデータ量少なくてもっと安いかもだけど...
-          tuusin = (aumax/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)))+mini - uqwari - (pay*187)+tuutei;
+          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*187))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)))+mini - uqwari - (pay*187)+tuutei;
           ryoukin[1,1] = tuusin;
+          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*187))-(mini - uqwari - (pay*187)+tuutei))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
           //三ヶ月目以降は,UQ満額-割引-支払い割+通話オプション
           tuusin = mini -uqwari - (pay*187)+tuutei;
           ryoukin[2,1] = tuusin;
@@ -347,8 +349,9 @@ public class changescene : MonoBehaviour
           tuusin = (aumax*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month)+tuutei;
           ryoukin[0,1] = tuusin;
           //二ヶ月目は,AU使い放題一日+UQ満額-割引ー支払い割+通話オプション代金で計算.実際初日にやったらデータ量少なくてもっと安いかもだけど...
-          tuusin = (aumax/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + toku - uqwari - (pay*187)+tuutei;
+          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*187))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + toku - uqwari - (pay*187)+tuutei;
           ryoukin[1,1] = tuusin;
+          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*187))-(toku - uqwari - (pay*187)+tuutei))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
           //三ヶ月目以降は,UQ満額-割引-支払い割+通話オプション
           tuusin = toku -uqwari - (pay*187)+tuutei;
           ryoukin[2,1] = tuusin;
@@ -362,8 +365,9 @@ public class changescene : MonoBehaviour
           ryoukin[0,1] = tuusin;
           //二ヶ月目は,AU使い放題一日+UQ満額+通話オプション代金で計算.実際初日にやったらデータ量少なくてもっと安いかもだけど...
           //コミコミプランは割引なし！
-          tuusin = (aumax/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + komi +tuutei;
+          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*187))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + komi +tuutei;
           ryoukin[1,1] = tuusin;
+          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*187))-komi)/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
           //三ヶ月目以降は,UQ満額+通話オプション
           //コミコミプランは割引なし！
           tuusin = komi+tuutei;

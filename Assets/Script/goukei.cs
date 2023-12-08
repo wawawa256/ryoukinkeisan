@@ -19,12 +19,12 @@ public class goukei : MonoBehaviour {
       void Update () {
         a = changescene.ryoukin[0,0]+changescene.ryoukin[0,1]+3850;
         b = tanmatudai.b+changescene.ryoukin[1,1];
-        c = tanmatudai.c+changescene.ryoukin[2,1];
+        c = tanmatudai.b+changescene.ryoukin[2,1];
         d = changescene.ryoukin[2,0]+changescene.ryoukin[2,1];
         e = changescene.ryoukin[3,0]+changescene.ryoukin[2,1];
         Text score_text = score_object.GetComponent<Text> ();
         score_text.text = "合計" +
-                  "\n"   +a +
+                  "\n"   +a + "+前キャリの請求満額" +
                   "\n\n" + b +
                   "\n\n" +c+
                   "\n\n" +d+
