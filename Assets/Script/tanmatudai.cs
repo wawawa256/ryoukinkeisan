@@ -38,10 +38,17 @@ public class tanmatudai : MonoBehaviour {
         f=changescene.ryoukin[2,0];    //n-48
         g=changescene.ryoukin[3,0];   //49-
         if (b ==2 || b < 0 ){
-            b = 3;
-            c = 2;
-            d = 2;
-            e = 2;
+          if (detectCarrier.kyaria == 1){
+              b = 3;
+              c = 2;
+              d = 2;
+              e = 2;
+            }else{
+              b = 1;
+              c = 1;
+              d = 1;
+              e = 1;
+            }
           }
         score_text.text = "端末代金" +
                   "\n" + a +  //初月

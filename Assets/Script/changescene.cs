@@ -24,10 +24,11 @@ public class changescene : MonoBehaviour
     public static int tuusin ; //一月あたりの通信費
     public static int tuutei; //通話オプションによる追加金額
     public static int yuqwari; //uqの料金割引額;
-    public static int uqhiwari; //翌日uqが遅れるとどのくらい痛いのか?
+    public static int uqhiwari; //翌uqが遅れるとどのくらい痛いのか?
     public static int amari; //割引多めでポイント溢れたとき(もうそんなことはないんでしょうけどね...)
     public static int motihakobi; //メール持ち運び
     public static int zoryo; //増量オプション
+    public static int yokuuq; //翌uqをしてるか確認
     public static int zimute ;//事務手数料
     //以下,各料金プランの基本料金
     public static int eximo;
@@ -65,6 +66,16 @@ public class changescene : MonoBehaviour
     {
       //料金計算
       calc();
+    }
+
+    void start (){
+      tanmatu = 0;
+      tuusin = 0;
+      zimute = 3850;
+      amari = 0;
+      gakuwari[0]=0;
+      gakuwari[1]=0;
+      yokuuq = 0;
     }
 
 
@@ -117,11 +128,17 @@ public class changescene : MonoBehaviour
       amari = 0;
       gakuwari[0]=0;
       gakuwari[1]=0;
+      yokuuq = 0;
       //端末代金計算ゾーン
       //ポイントのあまりを計算する
       if (sumatoku == 1){
-        amari = pos - zan - atamakin*11000 -waribiki-47;
-        if (amari > 47){
+        if (detectCarrier.kyaria == 1){
+          amari = pos - zan - atamakin*11000 -waribiki-47;
+        }else{
+          amari = pos - zan - atamakin*11000 -waribiki-23;
+        }
+
+        if (amari > 23){
           amari =0;
         }
     }else{
@@ -362,6 +379,8 @@ public class changescene : MonoBehaviour
 
           //翌ミニミニの場合
           case 1:
+          //翌uqの差分表示をする
+          yokuuq = 1;
           //uqの増量OPは550円
           zoryo = zoryo*550;
           //家族割と光割の額を決定する
@@ -388,6 +407,8 @@ public class changescene : MonoBehaviour
 
           //翌トクトクの場合
           case 2:
+          //翌uqの差分表示をする
+          yokuuq = 1;
           //uqの増量OPは550円
           zoryo = zoryo*550;
           //家族割と光割の額を決定する
@@ -414,6 +435,8 @@ public class changescene : MonoBehaviour
 
           //翌コミコミの場合
           case 3:
+          //翌uqの差分表示をする
+          yokuuq = 1;
           //コミコミの場合,カケホが1100円,5分は無料なので,調整する.
           if (tuutei == 880 ) tuutei = 0;
           if (tuutei == 1980)  tuutei = 1100;
@@ -746,7 +769,7 @@ public class changescene : MonoBehaviour
             if (family != 0) {
               yuqwari = 1100; //家族がいれば,550円割引
             }else{yuqwari = 0;} //その他は0
-          }          
+          }
           //ymの増量OPは550円
           zoryo = zoryo*550;
           //学割の調整をする.一年間で割引額は変わらないので
