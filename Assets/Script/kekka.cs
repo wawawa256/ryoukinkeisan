@@ -27,7 +27,7 @@ public class kekka : MonoBehaviour {
           bun1 = 49;
         }
         Text score_text = score_object.GetComponent<Text> ();
-        score_text.text = "初月" +
+        score_text.text = "1ヶ月" +
                   "\n" +"2ヶ月" +
                   "\n" +"3-7ヶ月" +
                   "\n" +"8-13ヶ月" +
