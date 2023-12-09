@@ -396,9 +396,9 @@ public class changescene : MonoBehaviour
           tuusin = (aumax*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month);
           ryoukin[0,1] = tuusin;
           //二ヶ月目は,AU使い放題一日+UQ満額-割引ー支払い割+通話オプション代金で計算.実際初日にやったらデータ量少なくてもっと安いかもだけど...
-          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*110))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)))+mini - yuqwari - (pay*187);
+          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*110))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)))+mini - (pay*187);
           ryoukin[1,1] = tuusin;
-          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*110))-(mini - yuqwari - (pay*187)+tuutei))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
+          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*110))-(mini - (pay*187)))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
           //三ヶ月目以降は,UQ満額-割引-支払い割+通話オプション
           tuusin = mini -yuqwari - (pay*187);
           ryoukin[2,1] = tuusin;
@@ -424,9 +424,9 @@ public class changescene : MonoBehaviour
           tuusin = (aumax*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month);
           ryoukin[0,1] = tuusin;
           //二ヶ月目は,AU使い放題一日+UQ満額-割引ー支払い割+通話オプション代金で計算.実際初日にやったらデータ量少なくてもっと安いかもだけど...
-          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*110))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + toku - yuqwari - (pay*187);
+          tuusin = ((aumax - (family*550) - (BB*1100) - (pay*110))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1))) + toku - (pay*187);
           ryoukin[1,1] = tuusin;
-          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*110))-(toku - yuqwari - (pay*187)+tuutei))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
+          uqhiwari = (((aumax - (family*550) - (BB*1100) - (pay*110))-(toku - (pay*187)))/DateTime.DaysInMonth(dt.Year, ((dt.Month%12)+1)));
           //三ヶ月目以降は,UQ満額-割引-支払い割+通話オプション
           tuusin = toku -yuqwari - (pay*187);
           ryoukin[2,1] = tuusin;
