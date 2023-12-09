@@ -56,29 +56,32 @@ public class S4 : MonoBehaviour {
 
     public void ishokuChanged(){
       switch(ishoku.value){
-        case 0: //なしか3キャリ安心パック
+        case 0 : //なし
           itouzitu = 0;
         break;
-        case 1: //YUQキャリ安心パック
+        case 1 : //3キャリ安心パック
+          itouzitu = 0;
+        break;
+        case 2: //YUQキャリ安心パック
           itouzitu = 11000;
         break;
-        case 2: //mnp移植
+        case 3: //mnp移植
           itouzitu = 11000;
         break;
-        case 3: //mnp異os移植
+        case 4: //mnp異os移植
           itouzitu = 16500;
         break;
-        case 4: //完全移植
+        case 5: //完全移植
           itouzitu = 22000;
         break;
-        case 5: //異OS移植
+        case 6: //異OS移植
           itouzitu = 27500;
         break;
       }
     }
     public void Update(){
       touzitu = htouzitu + itouzitu;
-      getugaku = hgetugaku;  
+      getugaku = hgetugaku;
     }
 
 

@@ -487,6 +487,8 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
+    - m_Text: "\u306A\u3057"
+      m_Image: {fileID: 0}
     - m_Text: "3\u30AD\u30E3\u30EA\u5B89\u5FC3\u30D1\u30C3\u30AF"
       m_Image: {fileID: 0}
     - m_Text: "YUQ\u5B89\u5FC3\u30D1\u30C3\u30AF"
@@ -1894,7 +1896,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "3\u30AD\u30E3\u30EA\u5B89\u5FC3\u30D1\u30C3\u30AF"
+  m_Text: "\u306A\u3057"
 --- !u!222 &296519365
 CanvasRenderer:
   m_ObjectHideFlags: 0
