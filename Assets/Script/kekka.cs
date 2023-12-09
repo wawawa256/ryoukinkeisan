@@ -23,11 +23,16 @@ public class kekka : MonoBehaviour {
             bun = 24;
         }
         bun1=bun+1;
+        if (bun == 49){
+          bun1 = 49;
+        }
         Text score_text = score_object.GetComponent<Text> ();
         score_text.text = "初月" +
-                  "\n\n" +"2ヶ月" +
-                  "\n\n" + "3-" + bun +"ヶ月" +
-                  "\n\n" +  bun1 +"-48ヶ月"+
-                  "\n\n" +"49-ヶ月";
+                  "\n" +"2ヶ月" +
+                  "\n" +"3-7ヶ月" +
+                  "\n" +"8-13ヶ月" +
+                  "\n" + "14-" + bun +"ヶ月" +
+                  "\n" +  bun1 +"-48ヶ月"+
+                  "\n" +"49-ヶ月";
       }
 }
