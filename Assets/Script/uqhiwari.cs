@@ -13,9 +13,15 @@ public class uqhiwari : MonoBehaviour {
 
       // 更新
       void Update () {
-        hiwari = changescene.uqhiwari;
-        Text score_text = score_object.GetComponent<Text> ();
-        score_text.text = "翌uq:一日" + hiwari +"円高くなる";
+        if (changescene.yokuuq == 1){
+          hiwari = changescene.uqhiwari;
+          Text score_text = score_object.GetComponent<Text> ();
+          score_text.text = "翌UQ:1日に開通と比べて" + "\n" +"1日あたり" + hiwari +"円高くなる";
+        }else{
+          hiwari = changescene.uqhiwari;
+          Text score_text = score_object.GetComponent<Text> ();
+          score_text.text = "";
+        }
 
       }
 }
