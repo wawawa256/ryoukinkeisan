@@ -282,7 +282,7 @@ public class changescene : MonoBehaviour
           //eximo→ahamoの場合
           case 3:
             //ahamoの増量オプションは1100円
-            zoryo = zoryo*1100;
+            zoryo = zoryo*1980;
           switch(deta){
             case 0:
             irumo=irumo05;

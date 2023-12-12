@@ -53,9 +53,9 @@ public class optyousei : MonoBehaviour {
         if (motihakobi == 1) motihakobi = 0;
         zoryo = changescene.zoryo;
         if (zoryo == 1) zoryo = 0;
-        if ((detectCarrier.kyaria == 0) && (detectPlan.puran == 3) && (toguru.zoryo == 1)) ahamoop = 1100; //ahamoだけ翌月から金かかる
+        if ((detectCarrier.kyaria == 0) && (detectPlan.puran == 3) && (toguru.zoryo == 1)) ahamoop = 1980; //ahamoだけ翌月から金かかる
         Text score_text = score_object.GetComponent<Text> ();
-        a=changescene.motihakobi + tuutei + S4.getugaku;    //1
+        a=changescene.motihakobi + ahamoop + tuutei + S4.getugaku;    //1
         b=motihakobi + ahamoop + tuutei + S4.getugaku;    //2
         c=motihakobi + ahamoop + tuutei + S4.getugaku;   //3-7
         d=motihakobi + zoryo + tuutei + S4.getugaku;   //8-13

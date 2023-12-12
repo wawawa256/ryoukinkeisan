@@ -5668,13 +5668,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 990499877}
   m_TextComponent: {fileID: 1729887784}
   m_Placeholder: {fileID: 2080420573}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -8166,13 +8166,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1326412764}
   m_TextComponent: {fileID: 36924547}
   m_Placeholder: {fileID: 1412307577}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -10939,13 +10939,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1628337228}
   m_TextComponent: {fileID: 1260652353}
   m_Placeholder: {fileID: 762553055}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -11793,6 +11793,10 @@ MonoBehaviour:
     - m_Text: "eximo\u2192irumo"
       m_Image: {fileID: 0}
     - m_Text: "eximo\u2192ahamo"
+      m_Image: {fileID: 0}
+    - m_Text: "U15\u306F\u3058\u30B9\u30DE5GB"
+      m_Image: {fileID: 0}
+    - m_Text: "U15\u306F\u3058\u30B9\u30DE10GB"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12723,13 +12727,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1973776618}
   m_TextComponent: {fileID: 780574928}
   m_Placeholder: {fileID: 1164990432}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:

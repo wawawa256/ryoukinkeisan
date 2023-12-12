@@ -11,7 +11,7 @@ public class irumotext : MonoBehaviour {
     public void Update(){
       if (nowplan != detectPlan.puran) {
       nowplan = detectPlan.puran;
-      if (detectCarrier.kyaria == 0　&& detectPlan.puran != 0 && detectPlan.puran != 3){
+      if (detectCarrier.kyaria == 0　&& detectPlan.puran != 0 && detectPlan.puran != 3 && detectPlan.puran != 4 && detectPlan.puran != 5){
         dropdown.ClearOptions();    //現在の要素をクリアする
         List<string> list = new List<string>();
         list.Add("0.5GB");
