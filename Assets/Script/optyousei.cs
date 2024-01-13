@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
 
 using UnityEngine.UI;  // 追加しましょう
 
@@ -17,6 +19,7 @@ public class optyousei : MonoBehaviour {
     public static int motihakobi;
     public static int zoryo;
     public static int tuutei;
+    DateTime dt = DateTime.Now; //日割り用日付取得    
       // 初期化
       void Start () {
         ahamoop = 0;
@@ -27,7 +30,7 @@ public class optyousei : MonoBehaviour {
         if (zoryo == 1) zoryo = 0;
         if ((detectCarrier.kyaria == 0) && (detectPlan.puran == 3) && (toguru.zoryo == 1)) ahamoop = 1100; //ahamoだけ翌月から金かかる
         Text score_text = score_object.GetComponent<Text> ();
-        a=changescene.motihakobi + tuutei;    //1
+        a=changescene.motihakobi + (tuutei*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month);    //1
         b=motihakobi + ahamoop + tuutei;    //2
         c=motihakobi + ahamoop + tuutei;   //3-7
         d=motihakobi + zoryo + tuutei;   //8-13
@@ -55,7 +58,7 @@ public class optyousei : MonoBehaviour {
         if (zoryo == 1) zoryo = 0;
         if ((detectCarrier.kyaria == 0) && (detectPlan.puran == 3) && (toguru.zoryo == 1)) ahamoop = 1980; //ahamoだけ翌月から金かかる
         Text score_text = score_object.GetComponent<Text> ();
-        a=changescene.motihakobi + ahamoop + tuutei + S4.getugaku;    //1
+        a=changescene.motihakobi + ahamoop + (tuutei*(DateTime.DaysInMonth(dt.Year, dt.Month)-dt.Day+1))/DateTime.DaysInMonth(dt.Year, dt.Month) + S4.getugaku;    //1
         b=motihakobi + ahamoop + tuutei + S4.getugaku;    //2
         c=motihakobi + ahamoop + tuutei + S4.getugaku;   //3-7
         d=motihakobi + zoryo + tuutei + S4.getugaku;   //8-13
