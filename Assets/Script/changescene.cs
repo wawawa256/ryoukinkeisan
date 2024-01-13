@@ -68,6 +68,10 @@ public class changescene : MonoBehaviour
       calc();
     }
 
+    public void hanbai_button(){
+      Application.OpenURL("https://portal.nojima.co.jp/cgi-bin/dneo/zdoc.cgi?cmd=docindex#folder=7789&cmd=docindex&srch_key=&row=0");
+    }
+
     void start (){
       tanmatu = 0;
       tuusin = 0;
